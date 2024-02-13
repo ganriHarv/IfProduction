@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSPIRASI CEMERLANG INDONESIA - IF PRODUCTION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 48px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #6b6a63;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #6b6a63;
+            transition: width 0.3s ease, left 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 0;
+        }
+
+        /* About Section Styles */
+        #about {
+            background-color: #a7a6a3;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        #about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        #about p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #444;
+        }
+
+        /* Services Section Styles */
+        #services {
+            background-color: #f9f9f9;
+        }
+
+        .services-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .service {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+            width: calc(33.33% - 40px);
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .service p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Portfolio Section Styles */
+        #portfolio {
+            background-color: #f9f9f9;
+            padding-bottom: 50px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+            justify-content: center;
+        }
+
+        .portfolio-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item h3 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .portfolio-item p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Contact Section Styles */
+        #contact {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #contact input,
+        #contact textarea {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+            max-width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            border-color: #333;
+        }
+
+        #contact button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            width: 200px;
+            max-width: 100%;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #6b6a63;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #6b6a63;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .service,
+            .portfolio-item {
+                width: calc(50% - 30px);
+                max-width: none;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .service,
+            .portfolio-item {
+                width: 100%;
+            }
+        }
+
+        /* Video Section Styles */
+        #video {
+            background-color: #6b6a63;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #video h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .video-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .video-item {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .video-item video {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-item h3 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        /* Our Clients Section Styles */
+        #clients {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        #clients h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .client-logo {
+            max-width: 100px;
+            max-height: 50px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .client-logo:hover {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="LOGO1.png" alt="IF Production Logo">
+            <h1>INSPIRASI CEMERLANG INDONESIA</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>IF Production adalah agen perencanaan dan pelaksanaan acara di Makassar, Indonesia. Kami telah memberikan kontribusi signifikan dan dampak positif bagi berbagai klien dari sektor swasta hingga lembaga pemerintah dan BUMN. Kepercayaan yang kami dapatkan dari klien kami adalah hasil dari integritas kami dalam menjaga kepercayaan dan keberhasilan kami dalam menyelesaikan setiap proyek yang kami tangani.</p>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <h3>Event Organizer</h3>
+                    <p>Kami telah berhasil menyelenggarakan berbagai acara perusahaan seperti Soft Launching, Grand Launching, Company Gathering, Festival Budaya, Pameran, dan masih banyak lagi.</p>
+                </div>
+                <div class="service">
+                    <h3>Production Support</h3>
+                    <p>Selain menjadi penyelenggara acara, kami juga menyediakan dukungan produksi termasuk penyediaan properti dan sumber daya lainnya untuk mendukung keberhasilan acara.</p>
+                </div>
+                <div class="service">
+                    <h3>Agency Manpower</h3>
+                    <p>Kami menyediakan jasa tenaga kerja profesional untuk berbagai kebutuhan acara, sehingga Anda dapat fokus pada inti acara tanpa khawatir tentang detail teknis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Portfolio</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="fotoevent1.jpg" alt="Event 1">
+                    <h3>Semangat Sang Juara</h3>
+                    <p>Pesta Rakyat Kominfo 2018 mempercayakan IF Production untuk mengembangkan konsep strategis dalam menyelenggarakan program langsung di LOSARI KOTA Makassar.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="giias2.jpg" alt="Event 2">
+                    <h3>GIIAS MAKASSAR 2019</h3>
+                    <p>IF Production bersama Seven Event menyelenggarakan salah satu pameran otomotif terbesar di Indonesia.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="ibox.jpg" alt="Event 3">
+                    <h3>IBoxing Week 2023</h3>
+                    <p>IF Production dipercayakan oleh PT. Erajaya untuk menyelenggarakan IBoxing Week 2023 di Kota Makassar, yang menjadi acara pertama di luar Pulau Jawa yang sebanding dengan acara di Kota Jakarta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="section">
+        <div class="container">
+            <h2>Highlights</h2>
+            <div class="video-grid">
+                <div class="video-item">
+                    <video width="320" height="180" controls>
+                        <source src="karangtaruna1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Highlight Bulan Bakti Karang Taruna</h3>
+                </div>
+                <div class="video-item">
+                    <video width="320" height="180" controls>
+                        <source src="iboxing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Highlight IBoxing Week 2023 Kota Makassar</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="section">
+        <div class="container">
+            <h2>Our Clients</h2>
+            <div class="client-logos">
+                <img src="adira.png" alt="adira" class="client-logo">
+                <img src="bintang.png" alt="bintang" class="client-logo">
+                <img src="bpd.png" alt="bpd" class="client-logo">
+                <img src="dispora Hitam.png" alt="dispora" class="client-logo">
+                <img src="giias.png" alt="giias" class="client-logo">
+                <img src="goodday.png" alt="goodday" class="client-logo">
+                <img src="grab.png" alt="grab" class="client-logo">
+                <img src="jiva.png" alt="jiva" class="client-logo">
+                <img src="kredivo.png" alt="kredivo" class="client-logo">
+                <img src="kominfo.png" alt="nestle" class="client-logo">
+                <img src="ibox1.png" alt="nestle" class="client-logo">
+                <img src="djarum.png" alt="nestle" class="client-logo">
+                <img src="kalla.png" alt="nestle" class="client-logo">
+                <!-- Tambahkan logo klien lainnya sesuai kebutuhan -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/if.production__" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6285345674445" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:inspirasicemerlang.ind@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2018 INSPIRASI CEMERLANG INDONESIA - IF PRODUCTION. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
